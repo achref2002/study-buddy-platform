@@ -1,10 +1,6 @@
 import { MongoClient, type Db } from "mongodb"
 
-if (!process.env.MONGODB_URI) {
-  throw new Error('Invalid/Missing environment variable: "MONGODB_URI"')
-}
-
-const uri = process.env.MONGODB_URI
+const uri = process.env.MONGODB_URI ?? ""
 const options = {}
 
 let client: MongoClient
@@ -26,6 +22,10 @@ if (process.env.NODE_ENV === "development") {
 }
 
 export async function connectToDatabase(): Promise<{ db: Db; client: MongoClient }> {
+  if (!uri) {
+    throw new Error('Invalid/Missing environment variable: "MONGODB_URI"')
+  }
+
   const client = await clientPromise
   const db = client.db("pera")
   return { db, client }
