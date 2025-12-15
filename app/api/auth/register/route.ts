@@ -6,11 +6,20 @@ export async function POST(req: Request) {
   try {
     const { name, email, password, grade } = await req.json()
 
+    // Log incoming registration attempts (mask email)
+    try {
+      const safeEmail = typeof email === 'string' ? `${email.slice(0, 3)}***${email.slice(email.indexOf('@'))}` : undefined
+      console.log('[REGISTER_INCOMING]', { email: safeEmail })
+    } catch (e) {
+      console.log('[REGISTER_INCOMING] malformed payload')
+    }
+
     if (!name || !email || !password) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 })
     }
 
     const { db } = await connectToDatabase()
+    console.log('[REGISTER] connected to database')
 
     const existingUser = await db.collection("students").findOne({ email })
 
@@ -29,6 +38,8 @@ export async function POST(req: Request) {
       studySessions: [],
       createdAt: new Date(),
     })
+
+    console.log('[REGISTER] user inserted', { insertedId: result.insertedId?.toString?.() })
 
     return NextResponse.json({ message: "User created successfully", userId: result.insertedId }, { status: 201 })
   } catch (error) {
