@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 16, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/middleware.ts"],"sourcesContent":["export { default } from \"next-auth/middleware\"\n\nexport const config = {\n  matcher: [\"/home\", \"/profile\", \"/calendar\", \"/study-sessions\", \"/study-assistant\", \"/dashboard\"],\n}\n"],"names":[],"mappings":";;;;AAAA;;AAEO,MAAM,SAAS;IACpB,SAAS;QAAC;QAAS;QAAY;QAAa;QAAmB;QAAoB;KAAa;AAClG"}}]
+}

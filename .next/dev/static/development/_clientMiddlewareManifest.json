@@ -1,0 +1,26 @@
+[
+  {
+    "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/home(\\\\.json)?[\\/#\\?]?$",
+    "originalSource": "/home"
+  },
+  {
+    "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/profile(\\\\.json)?[\\/#\\?]?$",
+    "originalSource": "/profile"
+  },
+  {
+    "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/calendar(\\\\.json)?[\\/#\\?]?$",
+    "originalSource": "/calendar"
+  },
+  {
+    "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/study-sessions(\\\\.json)?[\\/#\\?]?$",
+    "originalSource": "/study-sessions"
+  },
+  {
+    "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/study-assistant(\\\\.json)?[\\/#\\?]?$",
+    "originalSource": "/study-assistant"
+  },
+  {
+    "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/dashboard(\\\\.json)?[\\/#\\?]?$",
+    "originalSource": "/dashboard"
+  }
+]
